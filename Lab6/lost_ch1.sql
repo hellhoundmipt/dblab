@@ -1,0 +1,18 @@
+--Lost changes
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+
+BEGIN TRANSACTION
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+UPDATE HOTELS SET stars = stars + 1 
+WHERE hotel_id = 1006
+
+COMMIT;
+
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+UPDATE HOTELS SET stars = 3 
+WHERE hotel_id = 1006

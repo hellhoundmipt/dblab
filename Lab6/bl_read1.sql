@@ -1,0 +1,15 @@
+--Dirty read
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+
+BEGIN TRANSACTION
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+COMMIT

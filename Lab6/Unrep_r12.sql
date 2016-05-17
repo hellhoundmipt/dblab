@@ -1,0 +1,12 @@
+--Unrepeated read
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+BEGIN TRANSACTION
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+Select stars FROM HOTELS 
+WHERE hotel_id = 1006
+
+COMMIT
